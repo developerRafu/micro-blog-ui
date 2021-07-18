@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="col-sm-9 p-3 mx-auto">
+        <h1 class="bd-title">{{post?.title}}</h1>
+        <p class="card-text mt-2"><small class="text-muted">Data de publicação: {{post?.data | date: 'dd/MM/yyyy - hh:mm'}}</small></p>
+        <hr>
+        <div class="bd-lead">{{post?.content}}</div>
+        <div class="d-grid gap-2 mx-auto">
+            <button (click)="redirect()" class="btn btn-primary">Editar</button>
+        </div>
+        <footer class="mt-5">
+            <div *ngFor="let tag of post?.tags">
+                <a href="">{{tag?.title}}</a>
+            </div>
+        </footer>
+    </div>
+</div>

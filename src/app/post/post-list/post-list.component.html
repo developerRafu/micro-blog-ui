@@ -1,0 +1,28 @@
+<div class="container col-6 col-sm-4 mx-auto">
+    <form class="d-flex mt-3" (submit)="search()" [formGroup]="form">
+        <input formControlName="text" class="form-control me-2" type="search" placeholder="Search" aria-label="Pesquisar...">
+        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+      </form>
+    <ul *ngFor="let post of posts" class="list-unstyled mt-5">
+        <li>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p class="card-text mt-2"><small class="text-muted">Data de publicação: {{post.data | date: 'dd/MM/yyyy - hh:mm'}}</small></p>
+                    <button class="btn btn-primary mt-1 mb-3" (click)="redirect(post.id)">Ler mais</button>
+                    <div class="row" *ngFor="let tag of post.tags">
+                        <div>
+                            {{tag.title}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div *ngIf="posts.length<=0" class="card mt-5">
+        <h5 class="card-body">Posts não encontrados! Tente novamente.</h5>
+    </div>
+    <div class="d-grid gap-2 mx-auto">
+        <button (click)="redirectNew()" class="btn btn-primary">Adicionar postagem</button>
+    </div>
+</div>
