@@ -1,5 +1,6 @@
 # MicroBlog
-  Para rodar a ui deve-se ter a seguintes requisitos:
+  Micro-blog construído em angular
+  #Requisitos:
   - Angular CLI 10
   - Node acima de 8
   - Navegador web
